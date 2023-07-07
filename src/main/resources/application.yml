@@ -4,4 +4,9 @@ server:
     context-path: /api
 logging:
   level:
-    root: DEBUG
+    com.chen.cloudapi_interface: DEBUG
+cloud:
+  client:
+    #为了引入client 直接在配置类中引入调用者的信息配置即可 再在测试类中写个cliet的调用
+    access-key: nmsl
+    secret-key: ndsl
