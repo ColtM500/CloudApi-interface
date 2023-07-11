@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * 名称 API
+ * 被人调用的接口
  *
  * @author Cloud
  */
