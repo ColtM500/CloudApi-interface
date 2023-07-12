@@ -41,6 +41,7 @@ public class NameController {
         if (!accessKey.equals("nmsl")){
             throw new RuntimeException("无权限");
         }
+        //这里不校验随机数了
         if (Long.parseLong(nonce)>10000) {
             throw new RuntimeException("无权限");
         }
