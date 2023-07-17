@@ -16,11 +16,12 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Slf4j
 @RestController
-@RequestMapping("/name")
+@RequestMapping("/")
 public class NameController {
 
-    @GetMapping("/")
-    public String getNameByGet(String name) {
+    @GetMapping("/name")
+    public String getNameByGet(String name, HttpServletRequest request) {
+        System.out.println(request.getHeader("chen"));
         return "GET 你的名字是" + name;
     }
 
@@ -54,6 +55,10 @@ public class NameController {
         if (!sign.equals(serverSign)){
             throw new RuntimeException("无权限");
         }
-        return "POST 用户名字是" + user.getUsername();
+        //TODO: 调用成功后 次数+1
+
+        String result = "POST 用户名字是" + user.getUsername();
+
+        return result;
     }
 }
