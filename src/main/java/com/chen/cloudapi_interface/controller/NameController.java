@@ -16,16 +16,16 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Slf4j
 @RestController
-@RequestMapping("/")
+@RequestMapping("/name")
 public class NameController {
 
-    @GetMapping("/name")
+    @GetMapping("/get")
     public String getNameByGet(String name, HttpServletRequest request) {
         System.out.println(request.getHeader("chen"));
         return "GET 你的名字是" + name;
     }
 
-    @PostMapping("/")
+    @PostMapping("/post")
     public String getNameByPost(@RequestParam String name) {
         log.error("错误为:{}",name);
         return "POST 你的名字是" + name;
